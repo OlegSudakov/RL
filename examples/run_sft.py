@@ -117,6 +117,8 @@ def setup_data(tokenizer: AutoTokenizer, data_config: DataConfig):
             data_config["system_key"],
             data_config["system_prompt"],
         )
+    elif data_cls == "llama_nemotron":
+        data = hf_datasets.LlamaNemotronDataset()
     else:
         raise ValueError(f"Unknown dataset class: {data_cls}")
     print(
