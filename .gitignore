@@ -30,6 +30,7 @@ hf_home/
 hf_datasets_cache/
 *logs/
 datasets/
+data/
 docker/*
 !docker/Dockerfile
 !docker/README.md

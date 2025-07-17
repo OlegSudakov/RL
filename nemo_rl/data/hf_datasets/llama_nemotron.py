@@ -42,3 +42,19 @@ class LlamaNemotronDataset:
             task_name="LlamaNemotron",
             prompt_file=None,
         )
+
+
+class LlamaNemotronJsonlDataset:
+    def __init__(self, train_ds_path: str, val_ds_path: str):
+        train_dataset = load_dataset("json", data_files=train_ds_path)["train"]
+        val_dataset = load_dataset("json", data_files=val_ds_path)["train"]
+
+        self.formatted_ds = {
+            "train": train_dataset,
+            "validation": val_dataset,
+        }
+
+        self.task_spec = TaskDataSpec(
+            task_name="LlamaNemotronJsonl",
+            prompt_file=None,
+        )

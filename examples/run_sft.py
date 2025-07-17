@@ -119,6 +119,11 @@ def setup_data(tokenizer: AutoTokenizer, data_config: DataConfig):
         )
     elif data_cls == "llama_nemotron":
         data = hf_datasets.LlamaNemotronDataset()
+    elif data_cls == "llama_nemotron_jsonl":
+        data = hf_datasets.LlamaNemotronJsonlDataset(
+            train_ds_path=data_config["train_data_path"],
+            val_ds_path=data_config["val_data_path"]
+        )
     else:
         raise ValueError(f"Unknown dataset class: {data_cls}")
     print(

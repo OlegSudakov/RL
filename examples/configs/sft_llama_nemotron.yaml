@@ -59,7 +59,9 @@ policy:
 
 data:
   max_input_seq_length: ${policy.max_total_sequence_length}
-  dataset_name: "llama_nemotron"
+  dataset_name: "llama_nemotron_jsonl"
+  train_data_path: /lustre/fsw/general_sa/osudakov/project/nemotron_star/nemo_rl_personal/RL/data/llama_nemotron_post_training/training.jsonl
+  val_data_path: /lustre/fsw/general_sa/osudakov/project/nemotron_star/nemo_rl_personal/RL/data/llama_nemotron_post_training/validation.jsonl
   add_bos: true
   add_eos: true
   add_generation_prompt: false
